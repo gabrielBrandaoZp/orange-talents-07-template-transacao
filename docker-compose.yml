@@ -22,18 +22,6 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: "1"
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
 
-  db-transacoes:
-    image: 'postgres:9.6-alpine'
-    container_name: db_transacoes_local
-    volumes:
-      - transacoes-volume:/var/lib/postgresql/data
-    ports:
-      - 5433:5432
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: db_transacoes
-
   postgres:
     image: 'postgres:9.6-alpine'
     volumes:
